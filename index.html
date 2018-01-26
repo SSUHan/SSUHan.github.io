@@ -1,270 +1,420 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Tessellate by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-<head>
-	<link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
-	<script
-	src="https://code.jquery.com/jquery-3.1.1.min.js"
-	integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-	crossorigin="anonymous"></script>
-	<script src="semantic/semantic.min.js"></script>
-	<style type="text/css">
+	<head>
+		<title>Brian Lee</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body>
 
-		.hidden.menu {
-			display: none;
-		}
+		<!-- Header -->
+			<section id="header" class="dark">
+				<header>
+					<h1>Junsu Lee, Brian</h1>
+					<p>Think Carefully, Act Quickly, and Do Professionally</p>
+				</header>
+				<footer>
+					<a href="#first" class="button scrolly">View Resume</a>
+				</footer>
+			</section>
 
-		.masthead.segment {
-			min-height: 700px;
-			padding: 1em 0em;
-		}
-		.masthead .logo.item img {
-			margin-right: 1em;
-		}
-		.masthead .ui.menu .ui.button {
-			margin-left: 0.5em;
-		}
-		.masthead h1.ui.header {
-			margin-top: 3em;
-			margin-bottom: 0em;
-			font-size: 4em;
-			font-weight: normal;
-		}
-		.masthead h2 {
-			font-size: 1.7em;
-			font-weight: normal;
-		}
-
-		.ui.vertical.stripe {
-			padding: 8em 0em;
-		}
-		.ui.vertical.stripe h3 {
-			font-size: 2em;
-		}
-		.ui.vertical.stripe .button + h3,
-		.ui.vertical.stripe p + h3 {
-			margin-top: 3em;
-		}
-		.ui.vertical.stripe .floated.image {
-			clear: both;
-		}
-		.ui.vertical.stripe p {
-			font-size: 1.33em;
-		}
-		.ui.vertical.stripe .horizontal.divider {
-			margin: 3em 0em;
-		}
-
-		.quote.stripe.segment {
-			padding: 0em;
-		}
-		.quote.stripe.segment .grid .column {
-			padding-top: 5em;
-			padding-bottom: 5em;
-		}
-
-		.footer.segment {
-			padding: 5em 0em;
-		}
-
-		.secondary.pointing.menu .toc.item {
-			display: none;
-		}
-
-		@media only screen and (max-width: 700px) {
-			.ui.fixed.menu {
-				display: none !important;
-			}
-			.secondary.pointing.menu .item,
-			.secondary.pointing.menu .menu {
-				display: none;
-			}
-			.secondary.pointing.menu .toc.item {
-				display: block;
-			}
-			.masthead.segment {
-				min-height: 350px;
-			}
-			.masthead h1.ui.header {
-				font-size: 2em;
-				margin-top: 1.5em;
-			}
-			.masthead h2 {
-				margin-top: 0.5em;
-				font-size: 1.5em;
-			}
-		}
-
-
-	</style>
-	<script>
-		$(document)
-		.ready(function() {
-
-      // fix menu when passed
-      $('.masthead')
-      .visibility({
-      	once: false,
-      	onBottomPassed: function() {
-      		$('.fixed.menu').transition('fade in');
-      	},
-      	onBottomPassedReverse: function() {
-      		$('.fixed.menu').transition('fade out');
-      	}
-      })
-      ;
-
-      // create sidebar and attach to menu open
-      $('.ui.sidebar')
-      .sidebar('attach events', '.toc.item')
-      ;
-
-  })
-		;
-	</script>
-</head>
-<body>
-	<!-- Following Menu -->
-	<div class="ui large top fixed hidden menu">
-		<div class="ui container">
-			<a class="active item">Home</a>
-			<a class="item">About Me</a>
-			<a class="item">Activities</a>
-			<a class="item">Contact Me</a>
-			<a class="item">Blog</a>
-			<!-- <div class="right menu">
-				<div class="item">
-					<a class="ui button">Log in</a>
-				</div>
-				<div class="item">
-					<a class="ui primary button">Sign Up</a>
-				</div>
-			</div> -->
-
-		</div>
-	</div>
-	<!-- Sidebar Menu -->
-	<div class="ui vertical inverted sidebar menu">
-		<a class="active item">Home</a>
-		<a class="item">About Me</a>
-		<a class="item">Activities</a>
-		<a class="item">Contact Me</a>
-		<a class="item">Blog</a>
-	</div>
- 
-
-	<!-- Page Contents -->
-	<div class="pusher">
-		<div class="ui inverted vertical masthead center aligned segment">
-
-			<div class="ui container">
-				<div class="ui large secondary inverted pointing menu">
-					<a class="toc item">
-						<i class="sidebar icon"></i>
-					</a>
-					<a class="active item">Home</a>
-					<a class="item">About Me</a>
-					<a class="item">Activities</a>
-					<a class="item">Contact Me</a>
-					<!-- <div class="right item">
-						<a class="ui inverted button">Log in</a>
-						<a class="ui inverted button">Sign Up</a>
-					</div> -->
-					<a class="item">Blog</a>
-				</div>
-			</div>
-
-			<div class="ui text container">
-				<h1 class="ui inverted header">
-					Junsu Lee, Brian
-				</h1>
-				<h2>Imagine, Implement, Impressive</h2>
-				<!-- <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div> -->
-			</div>
-
-		</div>
-
-		<div class="ui vertical stripe segment">
-			<div class="ui middle aligned stackable grid container">
-				<div class="row">
-					<div class="eight wide column">
-						<h3 class="ui header">We Help Companies and Companions</h3>
-						<p>We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower your needs...through pure data analytics.</p>
-						<h3 class="ui header">We Make Bananas That Can Dance</h3>
-						<p>Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>
+		<!-- First -->
+			<section id="first" class="main">
+				<header>
+					<div class="container">
+						<h2></h2>
+						<p>Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet consequat<br />
+						feugiat. Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet.</p>
 					</div>
-					<div class="six wide right floated column">
-						<img src="assets/images/wireframe/white-image.png" class="ui large bordered rounded image">
-					</div>
-				</div>
-				<div class="row">
-					<div class="center aligned column">
-						<a class="ui huge button">Check Them Out</a>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-		<div class="ui vertical stripe quote segment">
-			<div class="ui equal width stackable internally celled grid">
-				<div class="center aligned row">
-					<div class="column">
-						<h3>"What a Company"</h3>
-						<p>That is what they all say about us</p>
-					</div>
-					<div class="column">
-						<h3>"I shouldn't have gone with their competitor."</h3>
-						<p>
-							<img src="assets/images/avatar/nan.jpg" class="ui avatar image"> <b>Nan</b> Chief Fun Officer Acme Toys
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="ui vertical stripe segment">
-			<div class="ui text container">
-				<h3 class="ui header">Breaking The Grid, Grabs Your Attention</h3>
-				<p>Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth your attention.</p>
-				<a class="ui large button">Read More</a>
-				<h4 class="ui horizontal header divider">
-					<a href="#">Case Studies</a>
-				</h4>
-				<h3 class="ui header">Did We Tell You About Our Bananas?</h3>
-				<p>Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but its really true. It took years of gene splicing and combinatory DNA research, but our bananas can really dance.</p>
-				<a class="ui large button">I'm Still Quite Interested</a>
-			</div>
-		</div>
-
-
-		<div class="ui inverted vertical footer segment">
-			<div class="ui container">
-				<div class="ui stackable inverted divided equal height stackable grid">
-					<div class="three wide column">
-						<h4 class="ui inverted header">About</h4>
-						<div class="ui inverted link list">
-							<a href="#" class="item">Sitemap</a>
-							<a href="#" class="item">Contact Us</a>
-							<a href="#" class="item">Religious Ceremonies</a>
-							<a href="#" class="item">Gazebo Plans</a>
+				</header>
+				<div class="content dark style1 featured">
+					<div class="container">
+						<div class="row">
+							<div class="4u 12u(narrow)">
+								<section>
+									<span class="feature-icon"><span class="icon fa-clock-o"></span></span>
+									<header>
+										<h3>Gravida</h3>
+									</header>
+									<p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales.
+									Diam tempor dui lacinia accumsan vivamus. Gravida dis placerat lectus
+									ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
+									accumsan vivamus.</p>
+								</section>
+							</div>
+							<div class="4u 12u(narrow)">
+								<section>
+									<span class="feature-icon"><span class="icon fa-bolt"></span></span>
+									<header>
+										<h3>Vivamus</h3>
+									</header>
+									<p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales.
+									Diam tempor dui lacinia accumsan vivamus. Gravida dis placerat lectus
+									ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
+									accumsan vivamus.</p>
+								</section>
+							</div>
+							<div class="4u 12u(narrow)">
+								<section>
+									<span class="feature-icon"><span class="icon fa-cloud"></span></span>
+									<header>
+										<h3>Accumsan</h3>
+									</header>
+									<p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales.
+									Diam tempor dui lacinia accumsan vivamus. Gravida dis placerat lectus
+									ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
+									accumsan vivamus.</p>
+								</section>
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<footer>
+									<a href="#second" class="button scrolly">Gravida tempor lacinia</a>
+								</footer>
+							</div>
 						</div>
 					</div>
-					<div class="three wide column">
-						<h4 class="ui inverted header">Services</h4>
-						<div class="ui inverted link list">
-							<a href="#" class="item">Banana Pre-Order</a>
-							<a href="#" class="item">DNA FAQ</a>
-							<a href="#" class="item">How To Access</a>
-							<a href="#" class="item">Favorite X-Men</a>
+				</div>
+			</section>
+
+		<!-- Second -->
+			<section id="second" class="main">
+				<header>
+					<div class="container">
+						<h2>Euismod sed feugiat lorem tempus magna</h2>
+						<p>Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet consequat<br />
+						feugiat. Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet.</p>
+					</div>
+				</header>
+				<div class="content dark style2">
+					<div class="container">
+						<div class="row">
+							<div class="4u 12u(narrow)">
+								<section>
+									<h3>Augue vivamus sed ipsum commodo lorem dolor</h3>
+									<p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales. Diam
+									tempor dui lacinia eget ornare varius gravida. Gravida dis placerat lectus ante
+									vel nunc euismod est turpis sodales. Diam tempor dui lacinia accumsan vivamus
+									augue cubilia vivamus nisi eu eget ornare varius gravida euismod.  Gravida dis
+									lorem ipsum dolor placerat magna tempus feugiat.</p>
+									<p>Lectus ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
+									accumsan vivamus augue cubilia vivamus nisi eu eget ornare varius gravida dolore
+									euismod lorem ipsum dolor.</p>
+									<footer>
+										<a href="#third" class="button scrolly">Accumsan nisi tempor</a>
+									</footer>
+								</section>
+							</div>
+							<div class="8u 12u(narrow)">
+								<div class="row">
+									<div class="6u"><a href="#" class="image fit"><img src="images/pic01.jpg" alt="" /></a></div>
+									<div class="6u"><a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a></div>
+									<div class="6u"><a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a></div>
+									<div class="6u"><a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a></div>
+									<div class="6u"><a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a></div>
+									<div class="6u"><a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a></div>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="seven wide column">
-						<h4 class="ui inverted header">Footer Header</h4>
-						<p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+				</div>
+			</section>
+
+		<!-- Third -->
+			<section id="third" class="main">
+				<header>
+					<div class="container">
+						<h2>Ornare varius lorem ipsum ante lectus</h2>
+						<p>Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet consequat<br />
+						feugiat. Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet.</p>
+					</div>
+				</header>
+				<div class="content dark style3">
+					<div class="container">
+						<span class="image featured"><img src="images/pic07.jpg" alt="" /></span>
+						<div class="row">
+							<div class="4u 12u(narrow)">
+								<h3>Diam vivamus turpis lorem sodales lectus ornare</h3>
+								<p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales. Diam
+								tempor dui lacinia eget ornare varius gravida. Gravida dis placerat lectus ante
+								vel nunc euismod est turpis sodales. Diam tempor dui lacinia accumsan vivamus
+								augue cubilia vivamus nisi eu eget ornare varius gravida euismod.  Gravida dis
+								lorem ipsum dolor placerat magna tempus feugiat.</p>
+								<p>Lectus ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
+								accumsan vivamus augue cubilia vivamus nisi eu eget ornare varius gravida dolore
+								euismod lorem ipsum dolor sit amet consequat. vivamus nisi eu eget ornare varius
+								gravida dolore euismod lorem ipsum dolor sit amet consequat. vivamus nisi eu
+								eget ornare et magna.</p>
+							</div>
+							<div class="4u 12u(narrow)">
+								<p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales. Diam
+								tempor dui lacinia eget ornare varius gravida. Gravida dis placerat lectus ante
+								vel nunc euismod est turpis sodales. Diam tempor dui lacinia accumsan vivamus
+								augue cubilia vivamus nisi eu eget ornare varius gravida euismod.  Gravida dis
+								lorem ipsum dolor placerat magna tempus feugiat.</p>
+								<p>Lectus ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
+								accumsan vivamus augue cubilia vivamus nisi eu eget ornare varius gravida dolore
+								euismod lorem ipsum dolor sit amet consequat eget ornare varius gravida euismod.
+								Gravida dis lorem ipsum dolor placerat magna tempus feugiat magna tempus lorem.</p>
+								<p>Lectus ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
+								accumsan vivamus augue cubilia.</p>
+							</div>
+							<div class="4u 12u(narrow)">
+								<p>Placerat lectus ante vel nunc euismod est turpis sodales. Diam tempor dui
+								lacinia eget ornare varius gravida. Gravida dis placerat lectus ante vel nunc
+								euismod est turpis sodales. Diam tempor dui lacinia accumsan vivamus augue
+								cubilia vivamus nisi eu eget ornare varius gravida euismod.  Gravida dis
+								lorem ipsum dolor placerat magna tempus feugiat. Lectus ante vel nunc euismod
+								est turpis sodales. Diam tempor dui lacinia dolore.</p>
+								<p>Accumsan vivamus augue cubilia vivamus nisi eu eget ornare varius gravida
+								dolore euismod lorem ipsum dolor sit amet conseismod lorem ipsum dolor sit amet
+								consequat lorem ipsum consequat feugiat sed tempus euismod feugiat veroeros.</p>
+								<footer>
+									<a href="#fourth" class="button scrolly">Ipsum ornare lorem dolor</a>
+								</footer>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-	</div>
-</body>
+			</section>
+
+		<!-- Basic Elements -->
+		<!--
+			<section class="main">
+				<header>
+					<div class="container">
+						<h2>A Whole Lotta Elements</h2>
+						<p>General purpose elements for every general purpose. Or something like that.</p>
+					</div>
+				</header>
+				<div class="content style1 dark">
+					<div class="container">
+						<section>
+							<header>
+								<h3>Paragraph</h3>
+								<p>This is a byline</p>
+							</header>
+							<p>Phasellus nisl nisl, varius id <sup>porttitor sed pellentesque</sup> ac orci. Pellentesque
+							habitant <strong>strong</strong> tristique <b>bold</b> et netus <i>italic</i> malesuada <em>emphasized</em> ac turpis egestas. Morbi
+							leo suscipit ut. Praesent <sub>id turpis vitae</sub> turpis pretium ultricies. Vestibulum sit
+							amet risus elit.</p>
+						</section>
+						<section>
+							<header>
+								<h3>Blockquote</h3>
+							</header>
+							<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget.
+							tempus euismod. Vestibulum ante ipsum primis in faucibus. Cras sit amet urna eros, id egestas
+							tempus ante ipsum primis in faucibus orci luctus et ultrices.</blockquote>
+						</section>
+						<section>
+							<header>
+								<h3>Divider</h3>
+							</header>
+							<p>Donec consectetur <a href="#">vestibulum dolor et pulvinar</a>. Etiam vel felis enim, at viverra
+							ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
+							facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
+							tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+							posuere cubilia.</p>
+							<hr />
+							<p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra
+							ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
+							facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
+							tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+							posuere cubilia.</p>
+						</section>
+						<section>
+							<header>
+								<h3>Unordered List</h3>
+							</header>
+							<ul class="default">
+								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
+								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
+								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
+								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
+							</ul>
+						</section>
+						<section>
+							<header>
+								<h3>Ordered List</h3>
+							</header>
+							<ol class="default">
+								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
+								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
+								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
+								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
+							</ol>
+						</section>
+						<section>
+							<header>
+								<h3>Table</h3>
+							</header>
+							<div class="table-wrapper">
+								<table class="default">
+									<thead>
+										<tr>
+											<th>ID</th>
+											<th>Name</th>
+											<th>Description</th>
+											<th>Price</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>00001</td>
+											<td>Lorem ipsum dolor</td>
+											<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
+											<td>29.99</td>
+										</tr>
+										<tr>
+											<td>00002</td>
+											<td>Sit amet nullam</td>
+											<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
+											<td>19.99</td>
+										</tr>
+										<tr>
+											<td>00003</td>
+											<td>Feugiat felis viverra</td>
+											<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
+											<td>29.99</td>
+										</tr>
+										<tr>
+											<td>00004</td>
+											<td>Sagittis enim felis</td>
+											<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
+											<td>19.99</td>
+										</tr>
+										<tr>
+											<td>00005</td>
+											<td>Nullam sed vestibulum</td>
+											<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
+											<td>19.99</td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="3"></td>
+											<td>100.00</td>
+										</tr>
+									</tfoot>
+								</table>
+							</div>
+						</section>
+						<section>
+							<header>
+								<h3>Form</h3>
+							</header>
+							<form method="post" action="#">
+								<div class="row 50%">
+									<div class="6u 12u(narrow)">
+										<input type="text" name="name" id="name" value="" placeholder="John Doe" />
+									</div>
+									<div class="6u 12u(narrow)">
+										<input type="text" name="email" id="email" value="" placeholder="johndoe@domain.tld" />
+									</div>
+								</div>
+								<div class="row 50%">
+									<div class="12u">
+										<div class="select" tabindex="-1">
+											<select name="department" id="department">
+												<option value="">Choose a department</option>
+												<option value="1">Manufacturing</option>
+												<option value="2">Administration</option>
+												<option value="3">Support</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="row 50%">
+									<div class="12u">
+										<input type="text" name="subject" id="subject" value="" placeholder="Enter your subject" />
+									</div>
+								</div>
+								<div class="row 50%">
+									<div class="12u">
+										<textarea name="message" id="message" placeholder="Enter your message"></textarea>
+									</div>
+								</div>
+								<div class="row">
+									<div class="12u">
+										<ul class="actions">
+											<li><input type="submit" class="button" value="Send Message" /></li>
+											<li><input type="reset" class="button alt" value="Clear Form" /></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+						</section>
+					</div>
+				</div>
+			</section>
+		-->
+
+		<!-- Fourth -->
+			<section id="fourth" class="main">
+				<header>
+					<div class="container">
+						<h2>Sed feugiat ipsum consequat</h2>
+						<p>Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet consequat<br />
+						feugiat. Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet.</p>
+					</div>
+				</header>
+				<div class="content style4 featured">
+					<div class="container 75%">
+						<form method="post" action="#">
+							<div class="row 50%">
+								<div class="6u 12u(mobile)"><input type="text" placeholder="Name" /></div>
+								<div class="6u 12u(mobile)"><input type="text" placeholder="Email" /></div>
+							</div>
+							<div class="row 50%">
+								<div class="12u"><textarea name="message" placeholder="Message"></textarea></div>
+							</div>
+							<div class="row">
+								<div class="12u">
+									<ul class="actions">
+										<li><input type="submit" class="button" value="Send Message" /></li>
+										<li><input type="reset" class="button alt" value="Clear Form" /></li>
+									</ul>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<section id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+					<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+				</ul>
+				<div class="copyright">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
