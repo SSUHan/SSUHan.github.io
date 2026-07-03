@@ -2,396 +2,1181 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Junsoo Lee</title>
-    <style type="text/css">
-    .center {
-        text-align: center;
-    }
+    <title>Junsoo Lee — Generative AI Research Scientist</title>
+    <meta name="description"
+        content="Junsoo Lee — Generative AI Research Scientist. Multimodal generative models (vision, video, audio) research and large-scale serving. NAVER WEBTOON AI, KAIST.">
 
-    .lead {
-        font-size: 0.95rem;
-        text-align: left;
-    }
-        
-    .subtitle {
-        font-size: 1.7rem;
-        text-align: left;
-    }
-        
-    .title {
-        font-size: 2.2rem;
-        text-align: left;
-    }
-    
-    .ttitle {
-    font-size: 1.2rem;
-    text-align: left;
-    }
+    <!-- Open Graph -->
+    <meta property="og:title" content="Junsoo Lee — Generative AI Research Scientist">
+    <meta property="og:description"
+        content="Multimodal generative AI — research and large-scale serving across vision, video, audio and multi-agent systems.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ssuhan.github.io">
+    <meta property="og:image" content="https://ssuhan.github.io/images/profile.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --accent: #e8503a;
+            --accent-soft: #ff7a63;
+            --bg: #ffffff;
+            --bg-alt: #f6f5f3;
+            --card: #ffffff;
+            --text: #1c1c22;
+            --muted: #6b6b76;
+            --line: #e7e5e1;
+            --chip: #f1efec;
+            --chip-text: #4a4a55;
+            --shadow: 0 1px 2px rgba(0, 0, 0, .04), 0 8px 24px rgba(0, 0, 0, .06);
+            --radius: 16px;
+            --maxw: 1080px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #131318;
+                --bg-alt: #1a1a21;
+                --card: #1e1e26;
+                --text: #ececf1;
+                --muted: #9a9aa6;
+                --line: #2c2c36;
+                --chip: #262630;
+                --chip-text: #c6c6d0;
+                --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 12px 32px rgba(0, 0, 0, .4);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .wrap {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            line-height: 1.15;
+            letter-spacing: -.02em;
+        }
+
+        /* ---------- Nav ---------- */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: saturate(180%) blur(12px);
+            background: color-mix(in srgb, var(--bg) 82%, transparent);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .nav-inner {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--text);
+        }
+
+        .brand span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 26px;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: .9rem;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        @media (max-width: 720px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 84px 0 64px;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -180px;
+            right: -160px;
+            width: 520px;
+            height: 520px;
+            background: radial-gradient(circle, var(--accent-soft), transparent 62%);
+            opacity: .28;
+            filter: blur(8px);
+            z-index: 0;
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 44px;
+            align-items: center;
+        }
+
+        .avatar {
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--card);
+            box-shadow: var(--shadow);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: .82rem;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 22%, transparent);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0 0 10px;
+        }
+
+        .hero .role {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text);
+            margin: 0 0 6px;
+        }
+
+        .hero .aff {
+            color: var(--muted);
+            font-size: .98rem;
+            margin: 0 0 4px;
+        }
+
+        .tagline {
+            font-family: 'Space Grotesk', sans-serif;
+            font-style: italic;
+            color: var(--accent);
+            font-weight: 500;
+            margin: 18px 0 20px;
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 9px 16px;
+            border-radius: 999px;
+            font-size: .88rem;
+            font-weight: 600;
+            border: 1px solid var(--line);
+            background: var(--card);
+            color: var(--text);
+            transition: transform .15s ease, border-color .15s ease;
+        }
+
+        .btn:hover {
+            text-decoration: none;
+            transform: translateY(-2px);
+            border-color: var(--accent);
+        }
+
+        .btn.primary {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
+        @media (max-width: 720px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 24px;
+            }
+
+            .avatar {
+                margin: 0 auto;
+            }
+
+            .links {
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+        }
+
+        /* ---------- Sections ---------- */
+        section {
+            padding: 62px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .section-head {
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+            margin-bottom: 34px;
+        }
+
+        .section-head h2 {
+            font-size: 1.9rem;
+            margin: 0;
+        }
+
+        .section-head .idx {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .lead {
+            font-size: 1.02rem;
+            color: var(--text);
+            max-width: 780px;
+        }
+
+        .lead .muted {
+            color: var(--muted);
+        }
+
+        /* chips */
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 18px;
+        }
+
+        .chip {
+            font-size: .78rem;
+            font-weight: 600;
+            color: var(--chip-text);
+            background: var(--chip);
+            padding: 5px 12px;
+            border-radius: 999px;
+        }
+
+        /* ---------- Work cards (single-column, scannable) ---------- */
+        .cards {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .card {
+            display: grid;
+            grid-template-columns: 52px 1fr;
+            gap: 22px;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            box-shadow: var(--shadow);
+            transition: transform .18s ease, border-color .18s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+        }
+
+        .card .ico {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            font-size: 1.2rem;
+            background: color-mix(in srgb, var(--accent) 12%, transparent);
+            color: var(--accent);
+        }
+
+        .card .head {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .card h3 {
+            font-size: 1.14rem;
+            margin: 0;
+        }
+
+        .card .kpi {
+            font-size: .78rem;
+            font-weight: 700;
+            color: var(--accent);
+            white-space: nowrap;
+        }
+
+        .card p {
+            font-size: .94rem;
+            color: var(--muted);
+            margin: 8px 0 14px;
+            max-width: 68ch;
+        }
+
+        .card .chips {
+            margin-top: 0;
+        }
+
+        .card .chips .chip {
+            font-size: .72rem;
+            padding: 4px 10px;
+        }
+
+        @media (max-width: 620px) {
+            .card {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+        }
+
+        /* ---------- Highlights (packaged, lower in page) ---------- */
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .hl {
+            background: var(--bg-alt);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 22px 24px;
+        }
+
+        .hl .hl-label {
+            font-size: .76rem;
+            font-weight: 700;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .hl p {
+            margin: 0;
+            font-size: .95rem;
+            color: var(--text);
+        }
+
+        @media (max-width: 620px) {
+            .highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ---------- Publications ---------- */
+        .pub {
+            display: grid;
+            grid-template-columns: 210px 1fr;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--line);
+            align-items: center;
+        }
+
+        .pub:last-child {
+            border-bottom: none;
+        }
+
+        .pub img {
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid var(--line);
+            background: var(--bg-alt);
+        }
+
+        .pub .venue {
+            display: inline-block;
+            font-size: .74rem;
+            font-weight: 700;
+            color: var(--accent);
+            background: color-mix(in srgb, var(--accent) 10%, transparent);
+            padding: 3px 10px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+        }
+
+        .pub .pt {
+            font-weight: 700;
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .pub .authors {
+            font-size: .88rem;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+
+        .pub .authors b {
+            color: var(--text);
+        }
+
+        .pub .plinks a {
+            font-size: .85rem;
+            font-weight: 600;
+            margin-right: 12px;
+        }
+
+        @media (max-width: 620px) {
+            .pub {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .more {
+            margin-top: 24px;
+            font-size: .92rem;
+            color: var(--muted);
+        }
+
+        /* ---------- Timeline ---------- */
+        .timeline {
+            position: relative;
+            margin-left: 8px;
+        }
+
+        .tl-item {
+            position: relative;
+            padding: 0 0 30px 30px;
+            border-left: 2px solid var(--line);
+        }
+
+        .tl-item:last-child {
+            border-left-color: transparent;
+            padding-bottom: 0;
+        }
+
+        .tl-item::before {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: 4px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--bg);
+        }
+
+        .tl-item .when {
+            font-size: .8rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: .03em;
+        }
+
+        .tl-item h3 {
+            font-size: 1.08rem;
+            margin: 3px 0 2px;
+        }
+
+        .tl-item .sub {
+            font-size: .9rem;
+            color: var(--muted);
+            margin-bottom: 8px;
+        }
+
+        .tl-item ul {
+            margin: 0;
+            padding-left: 18px;
+            font-size: .92rem;
+            color: var(--text);
+        }
+
+        .tl-item li {
+            margin-bottom: 3px;
+        }
+
+        /* ---------- Two-col (edu / skills) ---------- */
+        .twocol {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 720px) {
+            .twocol {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .row-item {
+            margin-bottom: 18px;
+        }
+
+        .row-item .top {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .row-item .name {
+            font-weight: 700;
+        }
+
+        .row-item .date {
+            font-size: .85rem;
+            color: var(--muted);
+        }
+
+        .row-item .desc {
+            font-size: .9rem;
+            color: var(--muted);
+        }
+
+        .skill-group {
+            margin-bottom: 16px;
+        }
+
+        .skill-group .gl {
+            font-size: .82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            color: var(--muted);
+            margin-bottom: 8px;
+        }
+
+        /* ---------- Footer ---------- */
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 40px 0 60px;
+            text-align: center;
+            color: var(--muted);
+            font-size: .88rem;
+        }
+
+        footer .links {
+            justify-content: center;
+            margin-bottom: 18px;
+        }
     </style>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141257534-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-141257534-1');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-141257534-1');
     </script>
 </head>
 
 <body>
-    <div class="container" style="margin-top:10px;">
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <!-- Intro -->
-                <div>
-                    <div class="row">
-                        <div class="col-sm-5">
-                            <!-- <img src="images/profile.jpg" alt="" class="figure-img img-fluid" alt="Responsive image" style="margin:10px;"> -->
-                            <img src="images/profile.jpg" alt="" class="img-responsive img-circle" alt="Responsive image" style="margin:10px; border-radius: 50%">
-                        </div>
-                        <div class="col" style="margin-top: auto; margin-bottom: auto;">
-                            <header>
-                                <h3 class="title">Junsoo Lee</h3>
-                                <h3 class="ttitle">Artificial Intelligence Research Scientist, Generative Modeling, Computer Vision <br/>
-                                Korea Advanced Institute of Science and Technology (KAIST)<br/>
-                                NAVER WEBTOON AI <br/>
-                                ljs93kr at gmail dot com (ljs93kr@gmail.com)</h3>
-                                <div class="links">
-                                	<a href="https://drive.google.com/file/d/1V_rHmAcfND7xGYWblaTJnTQSqztruAg0/view?usp=drive_link">[CV]</a>
-                                    <a href='https://scholar.google.com/citations?user=Ww1oh28AAAAJ&hl=en'>[Google Scholar]</a>
-				                    <a href='https://github.com/SSUHan'>[Github]</a>
-                                    <a href='https://kr.linkedin.com/in/junsoolee93/en-us'>[LinkedIn]</a>
-<!--                                     <a href='CV_bahng_public.pdf'>[CV]</a> -->
-                                </div>
-                            </header>
-                        </div>
-                    </div>
-                </div>
-                <!-- About Me -->
-                <hr>
-                <div>
-                    <h3 class="subtitle">About Me</h3>
-                    <p class="lead">
-                    	"Do it, like a Pro" <br> <br>
-
-                        I currently work at NAVER WEBTOON Ltd. as a professional researcher of AI. 
-                        I acquired a master's degree in AI from Korea Advanced Institute of Science and Technology (KAIST), advised by Professor <a href='https://sites.google.com/site/jaegulchoo/'>Jaegul Choo</a>. <br>
-                        I am interested in finding ways that extract generalized and useful information (e.g., representation learning) without any labels (unsupervised / self-supervised) or in the very limited environment (semi-supervised), disentangle information according to its own purpose (e.g., image translation), and create an output with resepct to user's intention (e.g., conditional image generation / colorization). <br> <br>
-
-                        #AI Research #Computer Vision #Generative Models #Machine Learning / Deep Learning #AI Engineering #Conditional Generation #Representation Learning #Self-supervised Learning #Colorization #Style Transfer #Python
-
-                        <!-- I am a MS student at Korea Advanced Institute of Science and Technology (KAIST), advised by Professor <a href='https://sites.google.com/site/jaegulchoo/'>Jaegul Choo</a>.
-                        I am interested in finding ways that extract generalized and useful information (e.g., representation learning) without any labels (unsupervised / self-supervised) or in the very limited environment (semi-supervised), disentangle information according to its own purpose (e.g., image translation), and create an output with resepct to user's intention (e.g., conditional image generation / colorization). -->
-                        <!-- My research interest lies in the areas of computer vision and machine learning. I will be joining <a href='https://www.csail.mit.edu/'>MIT CSAIL</a> as a PhD student in Fall 2020. -->
-                    </p>
-                </div>
-                
-                <!-- Recent News! -->
-                <hr>
-                <div>
-                    <h3 class="subtitle">News</h3>
-                    <p class="lead">
-                    	<span class="font-weight-bold">[Mar 2021]</span> I started a work at <u>NAVER WEBTOON AI</u> as research scientist.<br>
-                        <span class="font-weight-bold">[Sep 2020]</span> I will present my studies, including my work, at AI conference hosted by <u>DIT Center of SAMSUNG Electronics</u>. <br>
-                    	<span class="font-weight-bold">[Aug 2020]</span> I presented our work (colorization) at <u>KCCV'20</u> conference. <br>
-                    	<span class="font-weight-bold">[Jul 2020]</span> I started research internship at <u>AI Lab Context part, KAKAO Enterprise Corp</u>. <br>
-                    	<span class="font-weight-bold">[Jul 2020]</span> I presented work of my laboratory, including my work, at AI conference hosted by <u>HYUNDAI Motor Corporation</u>. <br>
-                    	<span class="font-weight-bold">[Jun 2020]</span> I presented our work (colorization) at <u>CVPR'20</u> conference. <br>
-                    	<span class="font-weight-bold">[Mar 2020]</span> I started my MS course at Korea Advanced Institute of Science and Technology <u>(KAIST)</u>. <br>
-                    	<span class="font-weight-bold">[Mar 2019]</span> I started my MS course at <u>Korea University</u>. <br>
-                    	<span class="font-weight-bold">[Oct 2018]</span> I started research at <u>AI Research team, NAVER WEBTOON Corp</u>. <br>
-                        <span class="font-weight-bold">[Apr 2018]</span> I started research internship at <u>Papago OCR team, NAVER Corp</u>. <br>
-                    </p>
-                </div>
-                
-                <!-- Publications -->
-                <hr>
-                <div>
-                    <h3 class="subtitle">Publications</h3>
-                    
-                    <!-- RSC CVPR20 -->
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <img src="images/cvpr20_rsc.png" alt="" class="figure-img img-fluid" alt="Responsive image" style="margin:10px;">
-                        </div>
-                        <div class="col" style="margin-top: auto; margin-bottom: auto;">
-                            <p class="lead">
-                                <span class="font-weight-bold">Reference-based Sketch Image Colorization using Augmented-Self Reference and Dense Semantic Correspondence</span></br>
-                                <span class="font-weight-bold">Junsoo Lee*</span>, Eungyeup Kim*, Yunsung Lee, Dongjun Kim, Jaehyuk Chang and Jaegul Choo</br>
-				<i>accpeted at <span class="font-weight-bold">CVPR 2020</span></i></br>
-                                <a href='https://arxiv.org/abs/2005.05207'>[Paper]</a> 
-                                <a href='https://ssuhan.github.io/RSC_CVPR20/'>[Project]</a>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- DiffBlender -->
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <img src="images/diffblender.png" alt="" class="figure-img img-fluid" alt="Responsive image" style="margin:10px;">
-                        </div>
-                        <div class="col" style="margin-top: auto; margin-bottom: auto;">
-                            <p class="lead">
-                                <span class="font-weight-bold">DiffBlender: Scalable and Composable Multimodal Text-to-Image Diffusion Models</span></br>
-                                Sungnyun Kim*, <span class="font-weight-bold">Junsoo Lee*</span>, Kibeom Hong, Daesik Kim, Namhyuk Ahn <br>
-                <i>Under-reviewed</i></br>
-                                <a href='https://arxiv.org/abs/2305.15194'>[Paper]</a> 
-                                <!-- <a href='https://ssuhan.github.io/RSC_CVPR20/'>[Project]</a> -->
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Decomposing NTH -->
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <img src="images/triNTH.png" alt="" class="figure-img img-fluid" alt="Responsive image" style="margin:10px;">
-                        </div>
-                        <div class="col" style="margin-top: auto; margin-bottom: auto;">
-                            <p class="lead">
-                                <span class="font-weight-bold">Exploring to Decompose Identity of Image Animation into Structure and Attribute by Cross-identity Generation</span></br>
-                                <span class="font-weight-bold">Junsoo Lee</span>, Gunhee Kim, Kibeom Hong, Daesik Kim <br>
-                <i>Under-reviewed</i></br>
-                                <!-- <a href='https://arxiv.org/abs/2305.15194'>[Paper]</a>  -->
-                                <!-- <a href='https://ssuhan.github.io/RSC_CVPR20/'>[Project]</a> -->
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Guiding Colorization -->
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <img src="images/guidingcolor.png" alt="" class="figure-img img-fluid" alt="Responsive image" style="margin:10px;">
-                        </div>
-                        <div class="col" style="margin-top: auto; margin-bottom: auto;">
-                            <p class="lead">
-                                <span class="font-weight-bold">Guiding Users to Where to Give Color Hints for Efficient Interactive Sketch Colorization via Unsupervised Region Prioritization</span></br>
-                                Youngin Cho*, <span class="font-weight-bold">Junsoo Lee*</span>, Soyoung Yang, Juntae Kim, Yeojeong Park, Haneol Lee, Jaegul Choo <br>
-                <i>accepted at <span class="font-weight-bold">WACV 2023</span></i></br>
-                                <a href='https://arxiv.org/abs/2210.14270'>[Paper]</a> 
-                                <!-- <a href='https://ssuhan.github.io/RSC_CVPR20/'>[Project]</a> -->
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- LPMM -->
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <img src="images/LPMM.png" alt="" class="figure-img img-fluid" alt="Responsive image" style="margin:10px;">
-                        </div>
-                        <div class="col" style="margin-top: auto; margin-bottom: auto;">
-                            <p class="lead">
-                                <span class="font-weight-bold">LPMM: Intuitive Pose Control for Neural Talking-Head Model via Landmark-Parameter Morphable Model</span></br>
-                                Kwangho Lee, Patrick Kwon, Myung Ki Lee, Namhyuk Ahn, <span class="font-weight-bold">Junsoo Lee</span> <br>
-                <i>accepted at <span class="font-weight-bold">CVPRW 2023</span></i></br>
-                                <a href='https://arxiv.org/abs/2305.10456'>[Paper]</a> 
-                                <!-- <a href='https://ssuhan.github.io/RSC_CVPR20/'>[Project]</a> -->
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- SketchDiffusion -->
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <img src="images/sketchdiffusion.png" alt="" class="figure-img img-fluid" alt="Responsive image" style="margin:10px;">
-                        </div>
-                        <div class="col" style="margin-top: auto; margin-bottom: auto;">
-                            <p class="lead">
-                                <span class="font-weight-bold">Reference-based Image Composition with Sketch via Structure-aware Diffusion Model</span></br>
-                                Kangyeol Kim, Sunghyun Park, <span class="font-weight-bold">Junsoo Lee</span> <br>
-                <i>accepted at <span class="font-weight-bold">CVPRW 2023</span></i></br>
-                                <a href='https://arxiv.org/abs/2304.09748'>[Paper]</a> 
-                                <!-- <a href='https://ssuhan.github.io/RSC_CVPR20/'>[Project]</a> -->
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- FlatGAN -->
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <img src="images/flatgan.png" alt="" class="figure-img img-fluid" alt="Responsive image" style="margin:10px;">
-                        </div>
-                        <div class="col" style="margin-top: auto; margin-bottom: auto;">
-                            <p class="lead">
-                                <span class="font-weight-bold">FlatGAN: A Holistic Approach for Robust Flat-Coloring in High-Definition with Understanding Line Discontinuity</span></br>
-                                Han Kim*, Chunggi Lee*, <span class="font-weight-bold">Junsoo Lee*</span>, Dohyun Kim, Ganggin Lee, Mohyun Oh, Daesik Kim<br>
-                <i>Under-reviewed</i></br>
-                                <!-- <a href='https://arxiv.org/abs/2305.15194'>[Paper]</a>  -->
-                                <!-- <a href='https://ssuhan.github.io/RSC_CVPR20/'>[Project]</a> -->
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- C2BIN -->
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <img src="images/c2bin.png" alt="" class="figure-img img-fluid" alt="Responsive image" style="margin:10px;">
-                        </div>
-                        <div class="col" style="margin-top: auto; margin-bottom: auto;">
-                            <p class="lead">
-                                <span class="font-weight-bold">Learning Representations by Contrasting Clusters While Bootstrapping Instances</span></br>
-                                <span class="font-weight-bold">Junsoo Lee*</span>, Hojoon Lee*, Inkyu Shin, Jaekyoung Bae, InSo Kweon, Jaegul Choo<br>
-                <i>Under-reviewed</i></br>
-                                <!-- <a href='https://arxiv.org/abs/2305.15194'>[Paper]</a>  -->
-                                <!-- <a href='https://ssuhan.github.io/RSC_CVPR20/'>[Project]</a> -->
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- AnimeCeleb -->
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <img src="images/animeceleb.png" alt="" class="figure-img img-fluid" alt="Responsive image" style="margin:10px;">
-                        </div>
-                        <div class="col" style="margin-top: auto; margin-bottom: auto;">
-                            <p class="lead">
-                                <span class="font-weight-bold">AnimeCeleb: Large-Scale Animation CelebHeads Dataset for Head Reenactment</span></br>
-                                Kangyeol Kim, Sunghyun Park, Jaeseong Lee, Sunghyo Chung, <span class="font-weight-bold">Junsoo Lee</span>, Jaegul Choo<br>
-                <i>accepted at <span class="font-weight-bold">ECCV 2022</span></i></br>
-                                <a href='https://arxiv.org/abs/2111.07640'>[Paper]</a> 
-                                <!-- <a href='https://ssuhan.github.io/RSC_CVPR20/'>[Project]</a> -->
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Vid-ODE -->
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <img src="images/vidode.png" alt="" class="figure-img img-fluid" alt="Responsive image" style="margin:10px;">
-                        </div>
-                        <div class="col" style="margin-top: auto; margin-bottom: auto;">
-                            <p class="lead">
-                                <span class="font-weight-bold">Vid-ODE: Continuous-Time Video Generation with Neural Ordinary Differential Equation</span></br>
-                                Sunghyun Park*, Kangyeol Kim*, <span class="font-weight-bold">Junsoo Lee</span>, Jaegul Choo, Joonseok Lee, Sookyung Kim, Edward Choi<br>
-                <i>accepted at <span class="font-weight-bold">AAAI 2021</span></i></br>
-                                <a href='https://arxiv.org/abs/2010.08188'>[Paper]</a> 
-                                <!-- <a href='https://ssuhan.github.io/RSC_CVPR20/'>[Project]</a> -->
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Subject Labling -->
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <img src="images/subject_labeling.png" alt="" class="figure-img img-fluid" alt="Responsive image" style="margin:10px;">
-                        </div>
-                        <div class="col" style="margin-top: auto; margin-bottom: auto;">
-                            <p class="lead">
-                                <span class="font-weight-bold">Understanding Human-side Impact of Sequencing Images inBatch Labeling for Subjective Tasks</span></br>
-                                Ray Hong, Jungsoo Lee, Kyungmin Park, <span class="font-weight-bold">Junsoo Lee</span>, Chaeyeon Chung, Dongjun Kim, Yunsug Lee, Minjae Kim, Mookyung Song, Yeonwoo Kim, Jaegul Choo<br>
-                <i>accepted at <span class="font-weight-bold">AAAI 2021</span></i></br>
-                                <a href='https://dl.acm.org/doi/pdf/10.1145/3476037'>[Paper]</a> 
-                                <!-- <a href='https://ssuhan.github.io/RSC_CVPR20/'>[Project]</a> -->
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- MemoPainter CVPR19 -->
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <img src="images/cvpr19_memopainter.png" alt="" class="figure-img img-fluid" alt="Responsive image" style="margin:10px;">
-                        </div>
-                        <div class="col" style="margin-top: auto; margin-bottom: auto;">
-                            <p class="lead">
-                                <span class="font-weight-bold">Coloring With Limited Data: Few-Shot Colorization via Memory-Augmented Networks</span></br>
-                                Seungjoo Yoo*, Hyojin Bahng*, Sunghyo Chung, <span class="font-weight-bold">Junsoo Lee</span>, Jaehyuk Chang, and Jaegul Choo</br>
-				<i>accpeted at <span class="font-weight-bold">CVPR 2019</span></i></br>
-                                <a href='http://openaccess.thecvf.com/content_CVPR_2019/html/Yoo_Coloring_With_Limited_Data_Few-Shot_Colorization_via_Memory_Augmented_Networks_CVPR_2019_paper.html'>[Paper]</a> 
-                                <a href='https://sjooyoo.github.io/MemoPainter_CVPR2019'>[Project]</a>
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- OCR -->
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <img src="images/accv18_ocr.png" alt="" class="figure-img img-fluid" alt="Responsive image" style="margin:10px;">
-                        </div>
-                        <div class="col" style="margin-top: auto; margin-bottom: auto;">
-                            <p class="lead">
-                                <span class="font-weight-bold">Simultaneous Recognition of Horizontal and Vertical Text in Natural Images</span></br>
-                                Chankyu Choi, Youngmin Yoon, <span class="font-weight-bold">Junsoo Lee</span> and Junseok Kim</br>
-				<i>accpeted at <span class="font-weight-bold">ACCV 2018</span></i></br>
-                                <a href='https://arxiv.org/abs/1812.07059'>[Paper]</a>
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Work Experiments -->
-                <hr>
-                <div>
-                    <h3 class="subtitle">Work Experiences</h3>
-                    <!-- Kakao Enterprise Corp. -->
-                    <div class="row">
-                        <div class="col" style="margin-top: auto; margin-bottom: auto;">
-                            <p class="lead">
-                                <span class="font-weight-bold">Kakao Enterprise Corp.</span> <i>July. 2020 - present</i> </br>
-                                <i>AI Lab, as Research Internship</i> <br>
-                                - Unsupervised (self-supervised) Representation Learning <br>
-                                - Semi-supervised Representation Learning <br>
-                            </p>
-                        </div>
-                    </div>
-                    <!-- NAVER Webtoon Corp. -->
-                    <div class="row">
-                        <div class="col" style="margin-top: auto; margin-bottom: auto;">
-                            <p class="lead">
-                                <span class="font-weight-bold">NAVER Webtoon Corp.</span> <i align="left">Oct. 2018 - Feb. 2019</i></br>
-                                <i>AI Research, as Full-Time Researcher</i> <br>
-                                - Organized a workshop of comics at ICCV'19 <br>
-                                - Research on visual-language problems <br>
-                            </p>
-                        </div>
-                    </div>
-                    <!-- NAVER Corp. -->
-                    <div class="row">
-                        <div class="col" style="margin-top: auto; margin-bottom: auto;">
-                            <p class="lead">
-                                <span class="font-weight-bold">NAVER Corp.</span> <i align="left">Apr. 2018 - Oct. 2018</i> </br>
-                                <i>Papago OCR, as Research Internship</i> <br>
-                                - Optical character recognition (OCR) <br>
-                                - Developed a synthetic data generator for training the engine <br>
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Xinapse Corp. -->
-                    <div class="row">
-                        <div class="col" style="margin-top: auto; margin-bottom: auto;">
-                            <p class="lead">
-                                <span class="font-weight-bold">Xinapse Corp.</span> <i align="left">Apr. 2018 - Oct. 2018</i> </br>
-                                <i> NLP Engineering, as Research Internship</i> <br>
-                                - Research on topic modeling <br>
-                                - Developed a chat-bot system <br>
-                            </p>
-                        </div>
-                    </div>
-                    
-                </div>
-                <!-- Personal -->
-<!--                 <hr>
-                <div>
-                    <h3 class="subtitle">Personal</h3>
-                    <p class="lead">
-                        I love traveling and binge watching Netflix!
-                    </p>
-                </div> -->
+    <!-- ============ NAV ============ -->
+    <nav>
+        <div class="nav-inner">
+            <a class="brand" href="#top">Junsoo <span>Lee</span></a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#work">Work</a>
+                <a href="#publications">Publications</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
             </div>
-            <div class="col-md-1"></div>
         </div>
-    </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero" id="top">
+        <div class="wrap">
+            <div class="hero-grid">
+                <img class="avatar" src="images/profile.jpg" alt="Junsoo Lee">
+                <div>
+                    <span class="eyebrow">Generative AI · Research &amp; Serving</span>
+                    <h1>Junsoo Lee</h1>
+                    <p class="role">AI Research Scientist — Generative Modeling &amp; Software Engineering</p>
+                    <p class="aff">NAVER WEBTOON AI &nbsp;·&nbsp; M.S. in AI, KAIST</p>
+                    <p class="aff">Seongnam, Republic of Korea</p>
+                    <p class="tagline">“Do it, like a Pro.”</p>
+                    <div class="links">
+                        <a class="btn primary" href="https://drive.google.com/file/d/1-J6F78_GuWCPZMqFFoeKgM6JC1c121-L/view?usp=sharing" target="_blank" rel="noopener">📄 CV</a>
+                        <a class="btn" href="https://scholar.google.com/citations?user=Ww1oh28AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+                        <a class="btn" href="https://github.com/SSUHan" target="_blank" rel="noopener">GitHub</a>
+                        <a class="btn" href="https://kr.linkedin.com/in/junsoolee93/en-us" target="_blank" rel="noopener">LinkedIn</a>
+                        <a class="btn" href="mailto:ljs93kr@gmail.com">Email</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about">
+        <div class="wrap">
+            <div class="section-head"><span class="idx">01</span>
+                <h2>About</h2>
+            </div>
+            <p class="lead">
+                I build <b>multimodal generative AI</b> — and take it from research to real users. My work spans
+                <b>vision, video, audio, and language</b>: from designing and training domain-specific generative
+                models to operating the <b>large-scale GPU serving and backend platforms</b> that put them into
+                production services.
+            </p>
+            <p class="lead" style="margin-top:14px;">
+                <span class="muted">Career arc:</span> vision-based image generation &amp; understanding →
+                large-scale video generation → text-to-speech / music / sound → LLM-powered multi-agent &amp; retrieval
+                systems. Along the way I've accumulated experience in 3D data generation and temporal consistency
+                (visual correspondence), which I'm extending toward <b>spatial intelligence</b> and next-generation
+                multimodal systems.
+            </p>
+            <div class="chips">
+                <span class="chip">#Generative Models</span>
+                <span class="chip">#Diffusion</span>
+                <span class="chip">#Video Generation</span>
+                <span class="chip">#Multimodal</span>
+                <span class="chip">#Model Serving</span>
+                <span class="chip">#Multi-Agent · RAG</span>
+                <span class="chip">#Computer Vision</span>
+                <span class="chip">#AI Engineering</span>
+                <span class="chip">#Python</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ WORK ============ -->
+    <section id="work">
+        <div class="wrap">
+            <div class="section-head"><span class="idx">02</span>
+                <h2>Selected Work</h2>
+            </div>
+            <p class="lead" style="margin-bottom:28px;">
+                Highlights from <b>NAVER WEBTOON AI</b> (2021–present) — across content generation and content
+                understanding, from research to production serving.
+                <!-- TODO(image): each card can optionally host a small teaser figure to the left of the icon.
+                     If you want visuals, drop non-confidential images into images/work/ and add an <img> in the card.
+                     (Keep it public-safe for a GitHub Pages site.) -->
+            </p>
+            <div class="cards">
+                <div class="card">
+                    <div class="ico">🧩</div>
+                    <div>
+                        <div class="head">
+                            <h3>AI Platform — Model Serving &amp; Backend</h3>
+                            <span class="kpi">6+ generative models · one platform</span>
+                        </div>
+                        <p>A unified platform for multi-model GPU serving, backend, RAG and auth — infrastructure to
+                            product APIs. An AI onboarding agent turns a model repo into a deployable service, driving
+                            the marginal cost of adding a model toward zero.</p>
+                        <div class="chips"><span class="chip">FastAPI</span><span class="chip">GPU · multi-worker</span><span
+                                class="chip">vLLM</span><span class="chip">Redis · queue</span><span
+                                class="chip">microservices</span></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ico">🎬</div>
+                    <div>
+                        <div class="head">
+                            <h3>Video Generation — Training &amp; Data Pipeline</h3>
+                            <span class="kpi">260K+ trained · 690K+ curated</span>
+                        </div>
+                        <p>End-to-end, anime-domain video generation on a "data is the model" premise — multi-stage
+                            DiT training over a reusable, large-scale curation engine (dedup, captioning, motion &amp;
+                            aesthetic scoring) plus Blender-based 3D data generation.</p>
+                        <div class="chips"><span class="chip">DiT</span><span class="chip">data curation</span><span
+                                class="chip">distributed training</span><span class="chip">optical flow</span><span
+                                class="chip">Blender</span></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ico">📖</div>
+                    <div>
+                        <div class="head">
+                            <h3>Deep Story Understanding — Hierarchical RAG → LLM Wiki</h3>
+                            <span class="kpi">1,000+ episode series</span>
+                        </div>
+                        <p>An LLM reads full web-novels and extracts characters, relationships, events, narrative and
+                            worldview into structured metadata — evolved from Hierarchical RAG (RAPTOR) to an LLM-Wiki
+                            multi-agent design, on traceable local models with a Kafka event-driven serving pipeline.</p>
+                        <div class="chips"><span class="chip">LangGraph · DeepAgents</span><span
+                                class="chip">RAPTOR</span><span class="chip">local LLM · vLLM</span><span
+                                class="chip">Kafka</span><span class="chip">OpenSearch</span></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ico">📑</div>
+                    <div>
+                        <div class="head">
+                            <h3>PSD Parser &amp; Comic Component Analysis</h3>
+                            <span class="kpi">300K+ episodes · automated</span>
+                        </div>
+                        <p>Turns raw manuscripts into structured, machine-usable data: a production PSD engine (custom
+                            RGBA compositing) and a cascading CV pipeline (classify → segment → detect) — a platform
+                            asset feeding scroll-view, translation, animation and effect automation.</p>
+                        <div class="chips"><span class="chip">YOLO</span><span class="chip">segmentation</span><span
+                                class="chip">synthetic data</span><span class="chip">layer compositing</span></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ico">🎨</div>
+                    <div>
+                        <div class="head">
+                            <h3>Video / Animation Colorization</h3>
+                            <span class="kpi">validated by pro animators</span>
+                        </div>
+                        <p>Temporally-coherent colorization for animation via reference-based visual correspondence.
+                            Novel shadow-surface propagation and self-supervised (DINO) features won over
+                            initially-skeptical studio partners.</p>
+                        <div class="chips"><span class="chip">temporal propagation</span><span class="chip">DINO</span><span
+                                class="chip">self-supervised</span><span class="chip">Gradio</span></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ico">🧬</div>
+                    <div>
+                        <div class="head">
+                            <h3>Character Consistency &amp; AI Video</h3>
+                            <span class="kpi">shipped to a live service</span>
+                        </div>
+                        <p>Cascaded identity preservation (Style LoRA → IP-Adapter → FaceID) with per-character 3D
+                            pose DBs, and a text-to-video pipeline — among the org's first cases of generative AI
+                            serving end users directly.</p>
+                        <div class="chips"><span class="chip">SDXL · SVD</span><span
+                                class="chip">IP-Adapter · FaceID</span><span class="chip">ComfyUI</span><span
+                                class="chip">ControlNet</span><span class="chip">3D · motion</span></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ico">🔊</div>
+                    <div>
+                        <div class="head">
+                            <h3>Multi-Modal Audio / Sound Generation</h3>
+                            <span class="kpi">4+ modalities · 58 TTS voices</span>
+                        </div>
+                        <p>Served and integrated audio generation across modalities — TTS with voice cloning
+                            (model-swappable for zero-downtime upgrades), text-to-music, text-to-sound and
+                            video-to-audio — all in one unified serving framework.</p>
+                        <div class="chips"><span class="chip">TTS · voice cloning</span><span
+                                class="chip">text-to-music</span><span class="chip">video-to-audio</span><span
+                                class="chip">model distillation</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repackaged highlights, moved below the work detail -->
+            <div class="highlights" style="margin-top:34px;">
+                <div class="hl">
+                    <div class="hl-label">Breadth</div>
+                    <p>Research <b>and</b> large-scale serving across vision, video, audio and language — a full-stack
+                        multimodal generative-AI portfolio.</p>
+                </div>
+                <div class="hl">
+                    <div class="hl-label">Shipped</div>
+                    <p>Among the organization's <b>first generative-AI features to serve end users directly</b>, in a
+                        live consumer service.</p>
+                </div>
+                <div class="hl">
+                    <div class="hl-label">Research</div>
+                    <p><b>5 top-tier publications</b> (AAAI'24, ECCV'24 ×2, ICCV'23, ACM.MM'23) and <b>3 patents</b> in
+                        colorization &amp; virtual try-on.</p>
+                </div>
+                <div class="hl">
+                    <div class="hl-label">Scale</div>
+                    <p>Platforms spanning <b>6+ served models</b>, <b>260K+ training clips</b>, and <b>1,000+ episode</b>
+                        long-form series.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PUBLICATIONS ============ -->
+    <section id="publications">
+        <div class="wrap">
+            <div class="section-head"><span class="idx">03</span>
+                <h2>Selected Publications</h2>
+            </div>
+            <p class="lead" style="margin-bottom:20px;">
+                Peer-reviewed work at top-tier venues. <b>*</b> denotes equal contribution. Full list on
+                <a href="https://scholar.google.com/citations?user=Ww1oh28AAAAJ&hl=en" target="_blank" rel="noopener">Google
+                    Scholar</a>.
+            </p>
+
+            <!-- DreamStyler (AAAI'24) — TODO(image): replace images/ph_dreamstyler.svg with the real teaser figure.
+                 TODO(link): verify the arXiv id below. -->
+            <div class="pub">
+                <img src="images/ph_dreamstyler.svg" alt="DreamStyler">
+                <div>
+                    <span class="venue">AAAI 2024</span>
+                    <span class="pt">DreamStyler: Paint by Style Inversion with Text-to-Image Diffusion Models</span>
+                    <div class="authors">Namhyuk Ahn, <b>Junsoo Lee</b>, Chunggi Lee, Kunhee Kim, Daesik Kim,
+                        Seung-Hun Nam, Kibeom Hong</div>
+                    <div class="plinks"><a href="https://arxiv.org/abs/2309.06933" target="_blank" rel="noopener">[Paper]</a></div>
+                </div>
+            </div>
+
+            <!-- SAVE (ECCV'24) — TODO(image): replace images/ph_save.svg. TODO(link): add arXiv/paper URL. -->
+            <div class="pub">
+                <img src="images/ph_save.svg" alt="SAVE">
+                <div>
+                    <span class="venue">ECCV 2024</span>
+                    <span class="pt">SAVE: Protagonist Diversification with Structure-Agnostic Video Editing</span>
+                    <div class="authors">Yeji Song, Wonsik Shin, <b>Junsoo Lee</b>, Jeesoo Kim, Nojun Kwak</div>
+                    <div class="plinks"><a href="https://scholar.google.com/citations?user=Ww1oh28AAAAJ&hl=en" target="_blank" rel="noopener">[Paper]</a></div>
+                </div>
+            </div>
+
+            <!-- TCAN (ECCV'24) — TODO(image): replace images/ph_tcan.svg. TODO(link): add arXiv/paper URL. -->
+            <div class="pub">
+                <img src="images/ph_tcan.svg" alt="TCAN">
+                <div>
+                    <span class="venue">ECCV 2024</span>
+                    <span class="pt">TCAN: Animating Human Images with Temporally Consistent Pose Guidance using
+                        Diffusion Models</span>
+                    <div class="authors">Jeongho Kim*, Min-Jung Kim*, <b>Junsoo Lee</b>, Jaegul Choo</div>
+                    <div class="plinks"><a href="https://scholar.google.com/citations?user=Ww1oh28AAAAJ&hl=en" target="_blank" rel="noopener">[Paper]</a></div>
+                </div>
+            </div>
+
+            <!-- AesPA-Net (ICCV'23) — TODO(image): replace images/ph_aespanet.svg. TODO(link): verify arXiv id. -->
+            <div class="pub">
+                <img src="images/ph_aespanet.svg" alt="AesPA-Net">
+                <div>
+                    <span class="venue">ICCV 2023</span>
+                    <span class="pt">AesPA-Net: Aesthetic Pattern-Aware Style Transfer Networks</span>
+                    <div class="authors">Kibeom Hong, Seogkyu Jeon, <b>Junsoo Lee</b>, Namhyuk Ahn, Kunhee Kim, Daesik
+                        Kim, Youngjung Uh, Hyeran Byun</div>
+                    <div class="plinks"><a href="https://arxiv.org/abs/2307.09724" target="_blank" rel="noopener">[Paper]</a></div>
+                </div>
+            </div>
+
+            <div class="pub">
+                <img src="images/flatgan.png" alt="FlatGAN">
+                <div>
+                    <span class="venue">ACM MM 2023</span>
+                    <span class="pt">FlatGAN: A Holistic Approach for Robust Flat-Coloring in High-Definition with
+                        Understanding Line Discontinuity</span>
+                    <div class="authors">Han Kim*, Chunggi Lee*, <b>Junsoo Lee*</b>, Dohyun Kim, Ganggin Lee, Mohyun
+                        Oh, Daesik Kim</div>
+                </div>
+            </div>
+
+            <div class="pub">
+                <img src="images/guidingcolor.png" alt="Guiding Colorization">
+                <div>
+                    <span class="venue">WACV 2023</span>
+                    <span class="pt">Guiding Users to Where to Give Color Hints for Efficient Interactive Sketch
+                        Colorization via Unsupervised Region Prioritization</span>
+                    <div class="authors">Youngin Cho*, <b>Junsoo Lee*</b>, Soyoung Yang, Juntae Kim, Yeojeong Park,
+                        Haneol Lee, Jaegul Choo</div>
+                    <div class="plinks"><a href="https://arxiv.org/abs/2210.14270" target="_blank" rel="noopener">[Paper]</a></div>
+                </div>
+            </div>
+
+            <div class="pub">
+                <img src="images/animeceleb.png" alt="AnimeCeleb">
+                <div>
+                    <span class="venue">ECCV 2022</span>
+                    <span class="pt">AnimeCeleb: Large-Scale Animation CelebHeads Dataset for Head Reenactment</span>
+                    <div class="authors">Kangyeol Kim, Sunghyun Park, Jaeseong Lee, Sunghyo Chung, <b>Junsoo Lee</b>,
+                        Jaegul Choo</div>
+                    <div class="plinks"><a href="https://arxiv.org/abs/2111.07640" target="_blank" rel="noopener">[Paper]</a></div>
+                </div>
+            </div>
+
+            <div class="pub">
+                <img src="images/vidode.png" alt="Vid-ODE">
+                <div>
+                    <span class="venue">AAAI 2021</span>
+                    <span class="pt">Vid-ODE: Continuous-Time Video Generation with Neural Ordinary Differential
+                        Equation</span>
+                    <div class="authors">Sunghyun Park*, Kangyeol Kim*, <b>Junsoo Lee</b>, Jaegul Choo, Joonseok Lee,
+                        Sookyung Kim, Edward Choi</div>
+                    <div class="plinks"><a href="https://arxiv.org/abs/2010.08188" target="_blank" rel="noopener">[Paper]</a></div>
+                </div>
+            </div>
+
+            <div class="pub">
+                <img src="images/cvpr20_rsc.png" alt="Reference-based Sketch Colorization">
+                <div>
+                    <span class="venue">CVPR 2020</span>
+                    <span class="pt">Reference-based Sketch Image Colorization using Augmented-Self Reference and Dense
+                        Semantic Correspondence</span>
+                    <div class="authors"><b>Junsoo Lee*</b>, Eungyeup Kim*, Yunsung Lee, Dongjun Kim, Jaehyuk Chang,
+                        Jaegul Choo</div>
+                    <div class="plinks"><a href="https://arxiv.org/abs/2005.05207" target="_blank" rel="noopener">[Paper]</a>
+                        <a href="https://ssuhan.github.io/RSC_CVPR20/" target="_blank" rel="noopener">[Project]</a></div>
+                </div>
+            </div>
+
+            <div class="pub">
+                <img src="images/cvpr19_memopainter.png" alt="MemoPainter">
+                <div>
+                    <span class="venue">CVPR 2019</span>
+                    <span class="pt">Coloring With Limited Data: Few-Shot Colorization via Memory-Augmented
+                        Networks</span>
+                    <div class="authors">Seungjoo Yoo*, Hyojin Bahng*, Sunghyo Chung, <b>Junsoo Lee</b>, Jaehyuk Chang,
+                        Jaegul Choo</div>
+                    <div class="plinks"><a href="http://openaccess.thecvf.com/content_CVPR_2019/html/Yoo_Coloring_With_Limited_Data_Few-Shot_Colorization_via_Memory_Augmented_Networks_CVPR_2019_paper.html" target="_blank" rel="noopener">[Paper]</a>
+                        <a href="https://sjooyoo.github.io/MemoPainter_CVPR2019" target="_blank" rel="noopener">[Project]</a></div>
+                </div>
+            </div>
+
+            <div class="pub">
+                <img src="images/accv18_ocr.png" alt="OCR">
+                <div>
+                    <span class="venue">ACCV 2018</span>
+                    <span class="pt">Simultaneous Recognition of Horizontal and Vertical Text in Natural Images</span>
+                    <div class="authors">Chankyu Choi, Youngmin Yoon, <b>Junsoo Lee</b>, Junseok Kim</div>
+                    <div class="plinks"><a href="https://arxiv.org/abs/1812.07059" target="_blank" rel="noopener">[Paper]</a></div>
+                </div>
+            </div>
+
+            <p class="more">
+                Also: <b>DiffBlender</b>, <b>LPMM</b> (CVPRW'23), <b>Reference-based Image Composition</b> (CVPRW'23),
+                <b>Decomposing Image Animation Identity</b>, <b>C2BIN</b>, and
+                <b>Understanding Human-side Impact of Image Sequencing</b> (CSCW'21) — see Scholar for the complete
+                list.
+            </p>
+        </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience">
+        <div class="wrap">
+            <div class="section-head"><span class="idx">04</span>
+                <h2>Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="tl-item">
+                    <div class="when">Mar 2021 — Present</div>
+                    <h3>NAVER WEBTOON — Generative Model Research</h3>
+                    <div class="sub">Research Scientist (Full-time) · Gyeonggi, Korea</div>
+                    <ul>
+                        <li>Lead research and production serving of multimodal generative AI (vision, video, audio).</li>
+                        <li>Built the unified AI serving platform, video/audio pipelines, and multi-agent RAG systems.</li>
+                        <li>5 top-tier publications, 3 patents, 20+ paper reviews/year, industry–academia collaboration.</li>
+                    </ul>
+                </div>
+                <div class="tl-item">
+                    <div class="when">Aug 2020 — Feb 2021</div>
+                    <h3>KAKAO Enterprise — AI Lab</h3>
+                    <div class="sub">Research Intern (Full-time)</div>
+                    <ul>
+                        <li>Self-supervised &amp; semi-supervised visual representation learning from large-scale unlabeled images.</li>
+                    </ul>
+                </div>
+                <div class="tl-item">
+                    <div class="when">Oct 2018 — Feb 2019</div>
+                    <h3>NAVER WEBTOON — AI Research</h3>
+                    <div class="sub">Full-time Researcher</div>
+                    <ul>
+                        <li>Organizer for a comic-domain deep-learning workshop at ICCV'19.</li>
+                        <li>Visual-language research: comic panel reordering as a scene-understanding problem.</li>
+                    </ul>
+                </div>
+                <div class="tl-item">
+                    <div class="when">Apr 2018 — Oct 2018</div>
+                    <h3>NAVER — Papago OCR</h3>
+                    <div class="sub">Research Intern (Full-time)</div>
+                    <ul>
+                        <li>Synthetic data generation to improve OCR for Papago machine translation.</li>
+                        <li>Joint text recognition &amp; segmentation via multitask learning and GANs.</li>
+                    </ul>
+                </div>
+                <div class="tl-item">
+                    <div class="when">Jan 2018 — Apr 2018</div>
+                    <h3>Xinapse — NLP Engineering</h3>
+                    <div class="sub">Research Intern (Full-time)</div>
+                    <ul>
+                        <li>Sentence-level user-intent classifier with topic modeling; production chatbot backend.</li>
+                    </ul>
+                </div>
+                <div class="tl-item">
+                    <div class="when">Jul 2016 — Jul 2017</div>
+                    <h3>Software Maestro (7th)</h3>
+                    <div class="sub">Software &amp; Machine Learning Engineer · top 10% final certification</div>
+                    <ul>
+                        <li>CCTV video-analysis system auto-capturing objects across frames to cut search time.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ EDUCATION & SKILLS ============ -->
+    <section id="education">
+        <div class="wrap">
+            <div class="twocol">
+                <div>
+                    <div class="section-head"><span class="idx">05</span>
+                        <h2>Education</h2>
+                    </div>
+                    <div class="row-item">
+                        <div class="top">
+                            <span class="name">KAIST</span>
+                            <span class="date">Mar 2019 — Feb 2021</span>
+                        </div>
+                        <div class="desc">M.S. in Artificial Intelligence · Advisor: Prof. Jaegul Choo · Daejeon, Korea</div>
+                    </div>
+                    <div class="row-item">
+                        <div class="top">
+                            <span class="name">Soongsil University</span>
+                            <span class="date">Mar 2013 — Aug 2018</span>
+                        </div>
+                        <div class="desc">B.S. in Computer Science &amp; Engineering · Seoul, Korea</div>
+                    </div>
+
+                    <div class="section-head" style="margin-top:36px;"><span class="idx">06</span>
+                        <h2>Talks</h2>
+                    </div>
+                    <div class="row-item">
+                        <div class="top"><span class="name">DIT Center, SAMSUNG Electronics</span><span class="date">Jul 2020</span></div>
+                        <div class="desc">AI Seminar for Recent Image Generation — history of image generation &amp; colorization.</div>
+                    </div>
+                    <div class="row-item">
+                        <div class="top"><span class="name">HYUNDAI Motor Corporation</span><span class="date">Jul 2020</span></div>
+                        <div class="desc">Domestic AI Laboratories Clustering — lab publications overview.</div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="section-head"><span class="idx">07</span>
+                        <h2>Skills</h2>
+                    </div>
+                    <div class="skill-group">
+                        <div class="gl">Languages</div>
+                        <div class="chips">
+                            <span class="chip">Python</span><span class="chip">Java</span><span class="chip">C / C++</span><span class="chip">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <div class="gl">ML / Modeling</div>
+                        <div class="chips">
+                            <span class="chip">PyTorch</span><span class="chip">Diffusion Models</span><span class="chip">Video Generation</span><span class="chip">Style Transfer</span><span class="chip">Self-supervised</span><span class="chip">Multimodal</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <div class="gl">Serving / Infra</div>
+                        <div class="chips">
+                            <span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">Redis</span><span class="chip">GPU inference</span><span class="chip">vLLM</span><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span><span class="chip">OpenSearch</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <div class="gl">Agents / Retrieval</div>
+                        <div class="chips">
+                            <span class="chip">LangGraph</span><span class="chip">DeepAgents</span><span class="chip">Hierarchical RAG</span><span class="chip">local LLM serving</span><span class="chip">tool orchestration</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <div class="gl">Creative Tooling</div>
+                        <div class="chips">
+                            <span class="chip">ComfyUI</span><span class="chip">ControlNet</span><span class="chip">LoRA</span><span class="chip">Blender</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER / CONTACT ============ -->
+    <footer id="contact">
+        <div class="wrap">
+            <div class="links">
+                <a class="btn primary" href="mailto:ljs93kr@gmail.com">✉ ljs93kr@gmail.com</a>
+                <a class="btn" href="https://scholar.google.com/citations?user=Ww1oh28AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+                <a class="btn" href="https://github.com/SSUHan" target="_blank" rel="noopener">GitHub</a>
+                <a class="btn" href="https://kr.linkedin.com/in/junsoolee93/en-us" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+            <p>© <span id="yr">2026</span> Junsoo Lee · Built with plain HTML/CSS on GitHub Pages.</p>
+        </div>
+    </footer>
+
+    <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
 </body>
 
 </html>

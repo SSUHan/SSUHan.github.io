@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b2b33"/>
+      <stop offset="1" stop-color="#4a4a57"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="520" fill="url(#g)"/>
+  <rect x="16" y="16" width="1168" height="488" fill="none" stroke="#e8503a" stroke-width="3" stroke-dasharray="12 10" rx="14"/>
+  <text x="600" y="235" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800" fill="#ffffff" text-anchor="middle">DreamStyler</text>
+  <text x="600" y="300" font-family="Inter, Arial, sans-serif" font-size="34" fill="#e8503a" text-anchor="middle" font-weight="700">AAAI 2024</text>
+  <text x="600" y="360" font-family="Inter, Arial, sans-serif" font-size="24" fill="#c9c9d2" text-anchor="middle">placeholder — replace with paper teaser figure</text>
+</svg>
